@@ -1,0 +1,105 @@
+
+//footer::before {
+//  @extend %header-mix;
+//  left: 0;
+//}
+
+//footer::after {
+//  @extend %header-mix;
+//  left: calc(50% + 490px);
+//}
+
+footer {
+  background-color: $color1;
+  position: relative;
+  overflow: visible;
+  height: 140px;
+  .container {
+//    border-top: 5px solid #b30216;
+    background-color: transparent;
+    position: relative;
+    height: 100%;
+    #footerLogoWrapper {
+    .logo {
+      width: 65px;
+      height: auto;
+      margin-top: 40px;
+    }
+  }
+    #footerContactWrapper {
+      padding-top: 30px;
+      text-align: right;
+    }
+ }
+  .container::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 140px;
+    top: -78px;
+    @include bg-image (url('../img/heart-rate-bottom.png'));
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+  .container::after {
+    @include bg-image (url('../img/heart-rate-middle.png'));
+    background-position: top left;
+  }
+}
+
+footer::before, footer::after {
+  @extend %footer-before-after;
+}
+
+@media all and (min-width : 993px) {
+  footer {
+     .container::before {
+        background-position: top left 60%;
+    }
+  }
+  footer::before {
+    left:0;
+  }
+  footer::after {
+    left: calc(50% + 490px);
+  }
+}
+
+@media all and (min-width: 769px) and (max-width : 992px) {
+  footer {
+    .container::before {
+      background-position: top left 50%;
+      left: 0;
+    }
+  }
+  footer::before {
+    left:0;
+  }
+  footer::after {
+    left: calc(50% + 490px);
+  }
+}
+
+@media all and (min-width : 621px) and (max-width : 768px) {
+  footer {
+    .container::before {
+      background-position: top left -250px;
+    }
+  }
+  footer::before {
+    left:0;
+  }
+  footer::after {
+    left: 0;
+  }
+}
+
+@media all and (max-width : 620px){
+  footer {
+    .container::before {
+      background-position: top right -1020px;
+      top: -78px;
+      left: 0;
+    }
+  }
+}

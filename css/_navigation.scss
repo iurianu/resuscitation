@@ -1,0 +1,223 @@
+//  MAIN NAVIGATION STYLES
+
+#breadcrumb {
+  float: right;
+  clear: both;
+  margin-bottom: 20px;
+
+  ul#mainNavigation {
+    float: left;
+    text-transform: uppercase;
+    padding-right: 20px;
+    li {
+      display: inline-block;
+      a.link {
+        @extend %li-a;
+      }
+      a.link:hover, a.link:focus {
+        color: #b30252;
+        border-bottom: 4px solid $color1;
+      }
+    }
+  }
+}
+
+nav#navbar {
+  width: 100%;
+  height: 40px;
+  background-color: $color1;
+}
+
+ul#pageNavigation {
+  li {
+    float: left;
+    overflow: hidden;
+    sup {
+      vertical-align: super;
+      font-size: xx-small;
+    }
+    a{
+      @extend %li-a;
+      line-height: 40px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+  }
+  li:hover, li:focus {
+    background-color: #b30216;
+    a {
+      color: #FFFFFF;
+    }
+  }
+}
+
+.hidden {
+  left: -100% !important;
+}
+
+// PAGE NAVIGATION STYLES
+
+#nav-toggle {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  padding: 10px 35px 16px 0px;
+  cursor: pointer;
+}
+
+%nav-toggle-span {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #b30216;
+  @include border-radius(5px);
+  position: absolute;
+  display: block;
+  content: '';
+  @include transition(all 500ms ease-in-out);
+}
+
+#nav-toggle {
+  span {
+    @extend %nav-toggle-span;
+  }
+  span:before {
+    top: -10px;
+    @extend %nav-toggle-span;
+  }
+  span:after {
+    bottom: -10px;
+    @extend %nav-toggle-span;
+  }
+}
+
+#nav-toggle.active{
+  span {
+    background-color: transparent;
+  }
+  span:before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  span:after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+.expanded {
+  display: block !important;
+  position: absolute;
+  top: 25px;
+  z-index: 1000;
+  width: 100%;
+  ul {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 10px solid #b30216 !important;
+    //    height: calc(100vh - 100px);
+    //    @include opacity(1);
+    background-color: $color1;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    li {
+      display: block !important;
+      height: 50px;
+      border-bottom: 1px solid #FFFFFF;
+      line-height: 50px;
+      a.link {
+        line-height: 50px;
+        border-bottom: none !important;
+      }
+    }
+    li:hover {
+      background-color: #b30216;
+    }
+    li:hover>a.link {
+      color: #FFFFFF !important;
+    }
+    li:first-of-type {
+      border-top: 1px solid #FFFFFF !important;
+    }
+  }
+}
+
+// #pageNavigation Toggle
+
+
+@media all and (min-width : 993px) {
+  #nav-toggle {
+    display: none;
+  }
+  #closeNav, #openNav {
+    display: none;
+  }
+}
+
+@media all and (max-width : 992px) {
+  ul#mainNavigation li a {
+    padding-left: 40px !important;
+  }
+  nav#navbar {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 350px;
+    left: 0;
+    height: auto !important;
+    overflow: visible;
+    .container {
+      width: 100%;
+      ul#pageNavigation {
+        display: block;
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        li {
+          float: none;
+          display: block;
+          height: 40px;
+          width: 100%;
+          a {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  #closeNav {
+    background-color: #cfd8dc;
+    border: 1px solid #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #b30216;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    height: 35px;
+    padding: 5px 12px;
+    position: absolute;
+    right: -20px;
+    top: 40%;
+    transform: rotate(-90deg);
+    width: 70px;
+  }
+  #openNav {
+    background-color: #cfd8dc;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #b30216;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    height: 35px;
+    padding: 5px 12px;
+    position: absolute;
+    right: -52px;
+    top: 5%;
+    transform: rotate(90deg);
+    width: 70px;
+  }
+}

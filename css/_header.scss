@@ -1,0 +1,122 @@
+div#topWrapper {
+  @include bg-image(url('../img/blue-square-bg.jpg'));
+  background-repeat: repeat-y;
+  background-position: bottom center;
+}
+
+@media all and (max-width : 768px) {
+  div#topWrapper {
+    @include bg-image(url('../img/blue-square-bg-m.png'));
+  }
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: 170px;
+  .container {
+    min-height: 170px;
+    @include linear(top, transparent, transparent 133px, #ffffff 133px, #ffffff 100%);
+//  background-image: linear-gradient(to top, transparent, transparent 133px, #ffffff 133px, #ffffff 100%);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    position: relative;
+    *{
+      position: relative;
+      z-index: 1;
+    }
+    a.brand{
+      display: block;
+      float: left;
+      width: 205px;
+      margin-top: 20px;
+      margin-left: 45px;
+    }
+  }
+  .fa {
+    font-size: 20px;
+  }
+  .container::after{
+    position: absolute;
+    content: "";
+    bottom: -31px;
+    left: 0;
+    width: 100%;
+    height: 164px;
+    background-repeat: no-repeat;
+  }
+}
+
+header::before {
+  @extend %header-mix;
+  left: 0;
+}
+
+header::after {
+  @extend %header-mix;
+  left: calc(50% + 490px);
+}
+
+.contact {
+  float: right;
+  margin-top: 15px;
+  font-size: 14px;
+  color: $color2;
+  .address {
+    display: block;
+    line-height: 2em;
+  }
+  span.address:nth-of-type(2){
+    float: right;
+  }
+}
+
+@media all and (min-width : 993px) {
+  header {
+    .container {
+      .fa-search {
+        clear: both;
+        float: right;
+        padding-left: 15px;
+        line-height: 0.5;
+        color: $color2;
+      }
+      .search {
+        float: right;
+        position: absolute;
+        color: #9e9e9e;
+        right: 0;
+        bottom: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media all and (max-width : 992px) {
+  header {
+    .container {
+      .search {
+        float: right;
+        position: absolute;
+        color: #9e9e9e;
+        left: 25px;
+        bottom: 35px;
+        cursor: pointer;
+        .fa-search {
+          clear: both;
+          float: right;
+          padding-left: 15px;
+          line-height: 0.5;
+          color: $color2;
+        }
+        .fa-search::after {
+          content: "Search";
+          position: absolute;
+          top: 0;
+          left: 50px;
+        }
+      }
+    }
+  }
+}

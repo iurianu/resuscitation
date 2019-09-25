@@ -1,0 +1,281 @@
+
+@media all and (min-width : 993px) {
+  .container {
+    width: 980px;
+    margin: 0 auto;
+  }
+  #breadcrumb {
+    display: inline-block;
+  }
+  section#homeBanner {
+    background-position: 77px bottom;
+    @include bg-size (47%);
+    h1 {
+      padding-top: 100px;
+      font-size: 30px;
+      float: right;
+      width: 400px;
+    }
+    img.fixed-banner-logo {
+      position: absolute;
+      height: 80px;
+      bottom: 35px;
+      left: 20px;
+    }
+  }
+  .product-description {
+    margin-right: 450px;
+  }
+}
+
+@media all and (min-width : 769px) and (max-width : 992px) {
+  .container {
+    width: 100%;
+  }
+  header {
+    height: auto;
+    .container {
+      a.brand {
+        width: 145px;
+        margin: 10px !important;
+      }
+      #breadcrumb {
+        display: none;
+      }
+      .expanded {
+        top: 62px;
+      }
+      .contact {
+        display: none;
+      }
+    }
+    .container::after {
+      @include bg-image (url('../img/heart-rate-middle-m.png'));
+      background-position: top left 48%;
+    }
+  }
+  section#homeBanner {
+    background-position: 50px bottom;
+    h1 {
+      padding-right: 10px;
+      padding-top: 40px;
+      font-size: 24px;
+      float: right;
+      width: 300px;
+    }
+  }
+  .product-description {
+    margin-right: 450px;
+  }
+
+  h2, p.description {
+    padding-left: 10px !important;
+  }
+}
+
+@media all and (min-width : 769px) {
+  header {
+    .container {
+      a.brand {
+        width: 210px;
+      }
+    }
+    .container::after {
+      @include bg-image (url('../img/heart-rate-middle.png'));
+      background-position: top left;
+    }
+  }
+  section#homeBanner {
+    background-position: 77px bottom;
+    @include bg-size (47%);
+    main {
+      padding-bottom: 35px;
+    }
+  }
+  footer {
+    #footerLogoWrapper, #footerContactWrapper {
+      float: left;
+      width: 50%;
+      margin: 0;
+      padding-right: 20px;
+    }
+  }
+}
+
+@media all and (max-width : 768px) {
+  header {
+    height: auto;
+    .container {
+      a.brand {
+        width: 145px;
+        margin: 10px !important;
+      }
+      .contact {
+        display: none;
+      }
+    }
+    .container::after {
+      @include bg-image (url('../img/heart-rate-middle-m.png'));
+      background-position: top left 48%;
+    }
+  }
+  section#homeBanner {
+    @include bg-size (60%);
+    background-position: 30px bottom;
+    h1 {
+      float: right;
+      width: 300px;
+      padding: 15px 10px 0px;
+      font-size: 24px;
+      margin-top: -70px;
+    }
+  }
+  main {
+    padding-bottom: 45px;
+  }
+  footer {
+    .container {
+      #footerLogoWrapper {
+        display: none;
+      }
+      #footerContactWrapper {
+        width: 100%;
+        float: left;
+        padding-right: 20px;
+        padding-left: 15px;
+        text-align: left;
+        span.address:nth-of-type(2) {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width : 621px) and (max-width : 992px) {
+  header {
+    height: auto;
+    .container {
+      #breadcrumb {
+        display: none;
+      }
+    }
+  }
+  section#homeBanner {
+    img.fixed-banner-logo {
+      position: absolute;
+      height: 60px;
+      bottom: 35px;
+      left: 20px;
+    }
+  }
+}
+
+@media all and (max-width : 620px) {
+  header {
+    height: 100px;
+    .container {
+      #breadcrumb {
+        display: none;
+      }
+    }
+  }
+  section#homeBanner {
+    h1{
+      float: left;
+      width: 100%;
+    }
+    img.fixed-banner-logo {
+      position: absolute;
+      height: 40px;
+      bottom: 35px;
+      left: 20px;
+    }
+  }
+  section {
+    padding: 10px;
+  }
+  h2, p.description {
+    padding: 0px 10px !important;
+  }
+  .product-image {
+    position: relative !important;
+    float: left !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+  }
+  footer {
+    img.logo {
+      display: none;
+    }
+    .contact {
+      float: none;
+      padding: 10px;
+      font-size: 12px;
+      .address {
+        float: none !important;
+      }
+    }
+  }
+}
+
+@media all and (min-width : 481px) and (max-width : 768px) {
+  .container {
+    width: 100%;
+  }
+  #homeBanner {
+    div.container {
+      h1 {
+        font-size: 24px;
+        padding-top: 20px;
+      }
+    }
+  }
+  section {
+    padding: 20px;
+  }
+  .product-image {
+    position: relative !important;
+    width: 90% !important;
+    margin: 20px auto !important;
+    right: -20px !important;
+  }
+  h2, p.description {
+    padding-left: 10px !important;
+  }
+  ul {
+    padding-top: 20px;
+  }
+}
+
+@media all and (max-width : 480px) {
+  .container {
+    width: 100%;
+    margin: 0px;
+  }
+  section#homeBanner {
+    @include bg-size (90%);
+    background-position: 30px bottom;
+    h1 {
+      float: left;
+      width: 100%;
+      padding: 15px 10px 0px;
+      font-size: 24px;
+      margin-top: -70px;
+    }
+  }
+  .product-image {
+    position: relative !important;
+    float: left;
+    width: 90% !important;
+    left: 0;
+    right: 0;
+  }
+  #description {
+    .container {
+      ul {
+        padding-left: 0px;
+      }
+    }
+  }
+}

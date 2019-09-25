@@ -1,0 +1,131 @@
+
+%li-a {
+  color: $color4;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 2px 10px;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+
+%image-thumb {
+  position: absolute;
+  right: 20px;
+  width: 400px;
+  height: auto;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+
+%header-mix {
+  position: absolute;
+  content: "";
+  width: calc(50% - 490px);
+  height: 100%;
+  @include bg-image (url('../img/red-line.png'));
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  top: 0;
+}
+
+%circle {
+  @include border-radius(90%);
+  background-color: #b30216;
+  margin-right: 15px;
+  color: #FFFFFF;
+}
+
+%hover-content {
+  position: absolute;
+  display: none;
+  top: 0px;
+  right: -140px;
+  width: 290px;
+  height: 220px;
+  background-color: transparent;
+  padding: 40px 10px 0;
+  @include transition(all 0.7s ease);
+  z-index: 999;
+  cursor: auto;
+  .arrow {
+    content:"";
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 40%;
+    width: 0;
+    height: 20px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #ebeced;
+    border-left: 15px solid transparent;
+    z-index: 1001;
+    overflow: visible;
+  }
+  a {
+    color: #b30250;
+    text-decoration: none;
+  }
+  .text-content {
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 180px;
+    background-color: #ebeced;
+    margin: 0;
+    padding: 0 0 10px 10px;
+    @include opacity(0.8);
+    border: 2px solid #d2dade;
+    border-top: 10px solid transparent;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    font-size: 12px;
+    color: $color4 + 7;
+    @include word-wrap;
+    @include overflow-y(auto);
+    z-index: 1000;
+  }
+  .dots {
+    display: block;
+    width: 100%;
+    height: 20px;
+    background-color: #ebeced;
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    .dot-line {
+      display: block;
+      float: none;
+      width: 20%;
+      height: auto;
+      margin: 0 auto;
+      background-color: transparent;
+      padding-bottom: 10px;
+      .dot {
+        content: "";
+        display: inline-block;
+        padding: 5px;
+        width: 0;
+        height: 0;
+        background-color: $color2 - 5;
+        @include border-radius (100%);
+      }
+    }
+  }
+}
+
+%footer-before-after {
+  position: absolute;
+  content: "";
+  width: calc(50% - 490px);
+  height: 100%;
+  @include bg-image (url('../img/red-line-bottom.png'));
+  background-position: top left;
+  background-repeat: repeat-x;
+  top: 0;
+}

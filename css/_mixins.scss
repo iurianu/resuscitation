@@ -1,0 +1,55 @@
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@mixin transition ($value) {
+  -webkit-transition: $value;
+     -moz-transition: $value;
+       -o-transition: $value;
+          transition: $value;
+}
+
+@mixin bg-image($url) {
+  -webkit-background-image: $url;
+     -moz-background-image: $url;
+       -o-background-image: $url;
+          background-image: $url;
+}
+
+@mixin bg-size($size) {
+  -webkit-background-size: $size;
+     -moz-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
+}
+
+@mixin border-radius ($size) {
+  -webkit-border-radius: $size;
+     -moz-border-radius: $size;
+          border-radius: $size;
+}
+
+@mixin word-wrap {
+  -ms-word-wrap: break-word;
+      word-wrap: break-word;
+}
+
+@mixin overflow-y($value) {
+  -ms-overflow-y: $value;
+      overflow-y: $value;
+}
+
+@mixin opacity($value) {
+  filter: alpha(opacity=$value * 100);
+  opacity: $value;
+}
+
+@mixin linear($direction, $value1, $value2, $value3, $value4) {
+  background: -webkit-linear-gradient($direction, $value4, $value3, $value2, $value1);
+  background:    -moz-linear-gradient($direction, $value1, $value2, $value3, $value4);
+  background:     -ms-linear-gradient($direction, $value1, $color2, $value3, $value4);
+  background:      -o-linear-gradient($direction, $value1, $value2, $value3, $value4);
+  background:         linear-gradient(to $direction, $value1, $value2, $value3, $value4);
+ }
