@@ -1,11 +1,11 @@
+# HTML5 Home Page (PSD to HTML)
 
-### HTML5 Landing Page (PSD to HTML)
-###
+## Technologies used
 
-### Technologies used:
-###
-### HTML5/CSS3/JS
-### SASS/SCSS
-### jQuery
+* HTML5/CSS3/JS
+* SASS/SCSS
+* jQuery
 
-### See the page online [here](http://iurianu.phpnet.us/resuscitation/index.html)
+<hr />
+
+> See the page online [here](http://iurianu.phpnet.us/resuscitation/index.html)
